@@ -10,6 +10,7 @@ public class CartPage {
     By regionInputLocator = By.id("region");
     By postcodeInputLocator = By.id("postcode");
 
+    By proceedLink = By.xpath("//li[@class='method-checkout-cart-methods-onepage-bottom']//button[@title='Proceed to Checkout']//span//span[contains(text(),'Proceed to Checkout')]");
 
     public CartPage(WebDriver driver) {
         this.driver = driver;
@@ -28,5 +29,7 @@ public class CartPage {
         postcodeElement.sendKeys(postcode);
     }
 
-
+    public void clickproceedLink(){
+        driver.findElement(proceedLink).click();
+    }
 }
